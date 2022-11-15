@@ -19,10 +19,6 @@ func main() {
 	conn, err := net.Dial("tcp", "127.0.0.1:20000")
 	// 输出当前建Dial函数的返回值类型, 属于*net.TCPConn类型
 	fmt.Printf("客户端: %T\n", conn)
-	//target := "localhost:8000"
-	//
-	//raddr, err := net.ResolveTCPAddr("tcp", target)
-	//conn, err = net.DialTCP("tcp", nil, raddr)
 	if err != nil {
 		// 连接的时候出现错误
 		fmt.Println("err :", err)
@@ -45,13 +41,5 @@ func main() {
 		if err != nil {
 			return
 		}
-		//buf := [512]byte{}
-		//// 读取服务端发送的数据
-		//n, err := conn.Read(buf[:])
-		//if err != nil {
-		//	fmt.Println("recv failed, err:", err)
-		//	return
-		//}
-		//fmt.Println("客户端接收服务端发送的数据: ", string(buf[:n]))
 	}
 }
